@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Список мультфильмов Барби</title>
+  <link rel="stylesheet" href="css/styles.css" media="screen">
+  <link id="u-page-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Lobster:400">
+</head>
+
+<body>
+  <header id="head">
+    <div>
+      <img src="images/Logo.svg" class="logo">
+      <nav>
+        <ul>
+          <input type="checkbox" id="burger">
+          <li class="menu"><label for="burger"></label></li>
+          <li><a href="BarbieHistory.html">История Барби</a></li>
+          <li><a href="Movies.html" style="color: rgb(224, 33, 143)">Список мультфильмов</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-1">
+      <div>
+        <h1>Список мультфильмов Барби</h1>
+        <p>Мультфильмы Барби - это завораживающий мир мультипликационных фильмов производства компании Mattel
+          Creations, покоривших сердца миллионов детей по всему миру. Барби - это главный персонаж и знаменитый бренд
+          кукол, который с успехом перешел на большой экран. Ее приключения полны магии, романтики и дружбы.
+          Мультфильмы Барби отличаются красочной анимацией, яркими персонажами и добрым настроением. В этом списке вы
+          найдете все фильмы Барби, которые были созданы с момента выхода первого мультфильма в 2001 году.
+          Отправляйтесь вместе с Барби в удивительные путешествия и погрузитесь в мир сказочных приключений, который
+          захочется вернуться снова и снова.</p>
+      </div>
+    </section>
+
+    <section class="section-2">
+      <div class="grid-2" id="movies">
+        
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Выполнил Дашкевич Максим Александрович
+  </footer>
+
+  <script>
+    const checkbox = document.getElementById('burger');
+    const star = document.getElementById('star2');
+
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        star.style.opacity = '0';
+      } else {
+        star.style.opacity = '1';
+      }
+    });
+
+
+
+    var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "MoviesXML.xml", true);
+  xmlhttp.send();
+
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table=" ";
+  var x = xmlDoc.getElementsByTagName("MOVIE");
+  for (i = 0; i <x.length; i++) {
+      table += "<div><img src='" + 
+    x[i].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue + 
+    "'></div><div><h3>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</h3><p>" +
+    x[i].getElementsByTagName("DESCRIPTION")[0].childNodes[0].nodeValue +
+    "</p><p>" +
+    x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+    "</p><p>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</p><p>" +
+    x[i].getElementsByTagName("LENGTH")[0].childNodes[0].nodeValue +
+    "</p></div>";
+  }
+  document.getElementById("movies").innerHTML = table;
+}
+  </script>
+</body>
+
+</html>

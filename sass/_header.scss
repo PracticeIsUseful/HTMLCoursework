@@ -1,0 +1,92 @@
+header {
+  height: 93px;
+  background-color: rgba(224, 33, 143, 0.5);
+
+  div {
+    margin: 0 7%;
+    height: 93px;
+    display: inline;
+  }
+
+  .logo {
+    margin: 3px 0 0;
+    width: 144px;
+    height: 90px;
+  }
+
+  nav {
+    font-family: 'Open Sans', sans-serif !important;
+    position: relative;
+    float: right;
+    left: -7%;
+    height: inherit;
+
+    li {
+      display: inline-block;
+      padding: 24px 15px;
+
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        color: black;
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  input {
+    visibility: hidden;
+  }
+
+  @media (max-width: 991px) {
+
+    #burger,
+    [for=burger],
+    .menu {
+      display: block;
+      padding: 0;
+      color: white;
+    }
+  
+    ul {
+      margin: 0;
+    }
+  
+    [for=burger]::before {
+      content: "\2261";
+      font-size: 40px;
+    }
+  
+    #burger:checked+li>[for="burger"]::before {
+      content: "\2716";
+      position: relative;
+      left: 85%;
+    }
+  
+    #burger:checked~li {
+      display: block;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    
+    #burger:checked #star2 {
+      fill-opacity: 0;
+    }
+  
+    .menu~li {
+      display: none;
+    }
+  
+    figcaption {
+      color: red;
+    }
+  
+  }
+}

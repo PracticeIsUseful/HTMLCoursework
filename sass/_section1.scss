@@ -1,0 +1,36 @@
+.section-1 {
+  background-image: url("../images/15920.jpg");
+  background-position: 50% 10%;
+  background-size: cover;
+  
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 200px 7%;
+
+  div {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+  }
+  h1 {
+    color: white;
+    font-weight: 400;
+    margin: 0;
+    text-indent: 0;
+    line-height: 1.1;
+  }
+
+  #star1,
+  #star2 {
+    display: inline;
+    width: 54px;
+    height: 54px;
+    color: rgb(239, 206, 74);
+    margin: 4% auto 0 7%;
+    float: left;
+  }
+
+  #star2 {
+    margin: 4% 7% 0 auto;
+    float: right;
+  }
+}
