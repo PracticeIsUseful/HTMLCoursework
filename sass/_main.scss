@@ -22,6 +22,12 @@ body {
     margin: 0;
 }
 
+img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
 @function font-size($h) {
     @if($h=='h1') {
         @return 72px;
@@ -42,6 +48,7 @@ body {
 
 h1 {
     font-size: font-size('h1');
+    padding-bottom: 30px;
 }
 
 h3 {

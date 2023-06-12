@@ -6,27 +6,27 @@
   <meta charset="utf-8">
   <title>Список мультфильмов Барби</title>
   <link rel="stylesheet" href="css/styles.css" media="screen">
-  <link id="u-page-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Lobster:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400%7CMerriweather%7COpen+Sans:600%7CLobster:400">
 </head>
 
 <body>
   <header id="head">
     <div>
-      <img src="images/Logo.svg" class="logo">
+      <img src="images/LogoV2.svg" class="logo" alt="">
       <nav>
         <ul>
           <input type="checkbox" id="burger">
           <li class="menu"><label for="burger"></label></li>
           <li><a href="BarbieHistory.html">История Барби</a></li>
           <li><a href="Movies.html" style="color: rgb(224, 33, 143)">Список мультфильмов</a></li>
+          <li><a href="Barbie&World.html">Барби и мир</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="section-1">
+    <section class="section-2-1">
       <div>
         <h1>Список мультфильмов Барби</h1>
         <p>Мультфильмы Барби - это завораживающий мир мультипликационных фильмов производства компании Mattel
@@ -39,11 +39,11 @@
       </div>
     </section>
 
-    <section class="section-2">
+    <div class="section-2-2">
       <div class="grid-2" id="movies">
         
       </div>
-    </section>
+    </div>
 
   </main>
 
@@ -62,9 +62,6 @@
         star.style.opacity = '1';
       }
     });
-
-
-
     var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {

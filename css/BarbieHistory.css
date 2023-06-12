@@ -21,7 +21,7 @@ p {
   font-size: 18px;
 }
 
-figcaption {
+img+p {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
@@ -51,6 +51,10 @@ h3 {
 
   h3 {
     font-size: 30px;
+  }
+  
+  img+p {
+    color: red;
   }
 }
 
@@ -134,7 +138,7 @@ input {
   .menu {
     display: block;
     padding: 0;
-    color: white;
+    color: black;
   }
 
   ul {
@@ -163,10 +167,6 @@ input {
 
   .menu~li {
     display: none;
-  }
-
-  figcaption {
-    color: red;
   }
 
 }
